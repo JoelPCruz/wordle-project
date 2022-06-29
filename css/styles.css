@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Sans Grande", "Lucida Sans Unicode", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#container {
+    display: flex;
+    background-color: black;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* spaces our containers */
+#game {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    border-bottom: 1px solid rgb(58, 58, 60);
+}
+
+.title {
+    color: gainsboro;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.4rem 0 0.4rem 0;
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Sans Grande", "Lucida Sans Unicode", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Positioning the board container */
+#board-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+/* Setting each box to 5 colums that take up 1 fraction of the available space. */
+#board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* giving each square a solid colored border. */
+.square {
+    border: 2px solid rgb(58, 58, 60);
+    min-width: 60px; /* sizing the boxes. */
+    min-height: 60px;
+    font-size: 50px; /* setting the size of the letters. */
+    font-weight: bold;
+    color: gainsboro;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* setting the height of the container. */
+#keyboard-container {
+    height: 200px;
+}
+/* places the keyboard */
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation; /* gives the keyboard touch manipulation. */
+}
+/* sets the size of the buttons  */
+.keyboard-row button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer; /* when hovered turns to a pointer */
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px; /* spaces each button */
+    border-radius: 4px;
+    user-select: none; /* Controls the appearance of selection. */
+}
+
+/* Makes the wide button wider. */
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+}
+
+.spacer-half{
+    flex-grow: 0.5;
+}
